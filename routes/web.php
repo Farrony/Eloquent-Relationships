@@ -13,12 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-   $users = App\Models\User::with('profile')->get(); //From Ugi ser class access profile method
-   return view('welcome',compact('users'));
-});
+Route::get('/', 'App\Http\Controllers\ProfileController@index');
 
-Route::get('/inverse', function () {
-    $inverse = App\Models\Profile::with('user')->get();
-    return view('profile',compact('inverse'));
-});
+Route::get('/inverse', 'App\Http\Controllers\UserController@index');
