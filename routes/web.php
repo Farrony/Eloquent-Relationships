@@ -16,3 +16,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'App\Http\Controllers\ProfileController@index');
 
 Route::get('/inverse', 'App\Http\Controllers\UserController@index');
+
+Route::get('/onetomany', 'App\Http\Controllers\PostController@index');
