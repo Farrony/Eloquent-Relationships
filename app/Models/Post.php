@@ -9,9 +9,15 @@ class Post extends Model
 {
     use HasFactory;
 
+    // one to one reverse 
     public function user(){
         return $this->belongsTo(User::class)->withDefault([
             'name' => 'Guest User'
         ]);
+    }
+
+    // Mant to many 
+    public function tags(){
+        return $this->belongsToMany(Tag::class)->withTimestamps();
     }
 }
